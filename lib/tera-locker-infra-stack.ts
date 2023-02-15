@@ -1,4 +1,5 @@
 import { Stack, StackProps, aws_s3 } from "aws-cdk-lib";
+import { BlockPublicAccess } from "aws-cdk-lib/aws-s3";
 import { Construct } from "constructs";
 
 export class TeraLockerInfraStack extends Stack {
@@ -8,6 +9,7 @@ export class TeraLockerInfraStack extends Stack {
     // The code that defines your stack goes here
 
     new aws_s3.Bucket(this, "FirstBucket", {
+      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
       versioned: true,
     });
   }
