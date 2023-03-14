@@ -7,8 +7,7 @@ export class TeraLockerInfraStack extends Stack {
     super(scope, id, props);
 
     // The code that defines your stack goes here
-
-    new aws_s3.Bucket(this, "FirstBucket", {
+    new aws_s3.Bucket(this, "ContentBucket", {
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
       versioned: true,
     });
